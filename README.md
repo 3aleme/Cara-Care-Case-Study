@@ -174,7 +174,7 @@ Re-prescription is a sequel event that occurs after the prescription concludes. 
 **Why separate BigQuery datasets per layer?**
 Isolating `staging`, `intermediate`, and `marts` prevents analysts from accidentally querying half-built tables and makes the lineage immediately visible in the BigQuery console.
 
-For the full rationale behind every decision, see [`MYNotes.txt`](../MYNotes.txt) and [`Solution.md`](../Solution.md) at the project root.
+For the full rationale behind every decision, see [`MYNotes.txt`](MYNotes.txt) and [`Solution.md`](Solution.md) at the project root.
 
 ---
 
