@@ -1,0 +1,17 @@
+patient_id,patient_email,date_of_birth,insurance_name,insurance_type,prescription_id,prescription_start,prescription_end,prescription_status,prescribing_doctor,doctor_specialty,doctor_city,touchpoint_date,touchpoint_type,touchpoint_channel,touchpoint_outcome,represcription,represcription_date
+P-1001,anna.m@mail.de,1988-03-14,TK,gesetzlich,RX-2001,2025-01-15,2025-04-15,completed,Dr. Schmidt,Gastroenterologie,Berlin,2025-01-20,onboarding_call,phone,completed,ja,2025-04-20
+P-1001,anna.m@mail.de,1988-03-14,TK,gesetzlich,RX-2001,2025-01-15,2025-04-15,completed,Dr. Schmidt,Gastroenterologie,Berlin,2025-01-22,starter_kit,post,delivered,ja,2025-04-20
+P-1001,anna.m@mail.de,1988-03-14,TK,gesetzlich,RX-2001,2025-01-15,2025-04-15,completed,Dr. Schmidt,Gastroenterologie,Berlin,2025-02-10,push_reminder,app,clicked,ja,2025-04-20
+P-1001,anna.m@mail.de,1988-03-14,TK,gesetzlich,RX-2001,2025-01-15,2025-04-15,completed,Dr. Schmidt,Gastroenterologie,Berlin,2025-03-15,check_in_call,phone,completed,ja,2025-04-20
+P-1002,ben.f@web.de,1995-07-22,AOK,gesetzlich,RX-2002,2025-02-01,2025-05-01,completed,Dr. Weber,Allgemeinmedizin,Hamburg,2025-02-05,onboarding_call,phone,no_answer,nein,
+P-1002,ben.f@web.de,1995-07-22,AOK,gesetzlich,RX-2002,2025-02-01,2025-05-01,completed,Dr. Weber,Allgemeinmedizin,Hamburg,2025-02-20,email_nudge,email,opened,nein,
+P-1003,clara.b@gmx.de,1992-11-30,Barmer,gesetzlich,RX-2003,2025-03-10,2025-06-10,completed,Dr. Yilmaz,Gastroenterologie,München,2025-03-12,onboarding_call,phone,completed,ja,2025-06-18
+P-1003,clara.b@gmx.de,1992-11-30,Barmer,gesetzlich,RX-2003,2025-03-10,2025-06-10,completed,Dr. Yilmaz,Gastroenterologie,München,2025-03-14,starter_kit,post,delivered,ja,2025-06-18
+P-1003,clara.b@gmx.de,1992-11-30,Barmer,gesetzlich,RX-2003,2025-03-10,2025-06-10,completed,Dr. Yilmaz,Gastroenterologie,München,2025-05-20,check_in_call,phone,completed,ja,2025-06-18
+P-1004,david.k@yahoo.de,1990-06-03,DAK,gesetzlich,RX-2004,2025-01-20,2025-04-20,completed,Dr. Schmidt,Gastroenterologie,Berlin,2025-01-25,onboarding_call,phone,completed,nein,
+P-1004,david.k@yahoo.de,1990-06-03,DAK,gesetzlich,RX-2004,2025-01-20,2025-04-20,completed,Dr. Schmidt,Gastroenterologie,Berlin,2025-03-01,push_reminder,app,ignored,nein,
+P-1005,emma.s@outlook.de,1985-12-18,TK,gesetzlich,RX-2005,2025-02-15,2025-05-15,completed,Dr. Yilmaz,Gastroenterologie,München,2025-02-18,onboarding_call,phone,completed,ja,2025-05-22
+P-1005,emma.s@outlook.de,1985-12-18,TK,gesetzlich,RX-2005,2025-02-15,2025-05-15,completed,Dr. Yilmaz,Gastroenterologie,München,2025-02-20,starter_kit,post,delivered,ja,2025-05-22
+P-1005,emma.s@outlook.de,1985-12-18,TK,gesetzlich,RX-2005,2025-02-15,2025-05-15,completed,Dr. Yilmaz,Gastroenterologie,München,2025-03-10,push_reminder,app,clicked,ja,2025-05-22
+P-1005,emma.s@outlook.de,1985-12-18,TK,gesetzlich,RX-2005,2025-02-15,2025-05-15,completed,Dr. Yilmaz,Gastroenterologie,München,2025-04-15,check_in_call,phone,completed,ja,2025-05-22
+P-1005,emma.s@outlook.de,1985-12-18,TK,gesetzlich,RX-2005,2025-02-15,2025-05-15,completed,Dr. Yilmaz,Gastroenterologie,München,2025-05-01,email_nudge,email,clicked,ja,2025-05-22
