@@ -1,0 +1,60 @@
+version: 2
+
+models:
+  - name: monthly_represcription_rate
+    description: >
+      Monthly re-prescription rate KPI. One row per calendar month anchored on
+      prescription_end. See assumption A5 for full KPI definition.
+    columns:
+      - name: month
+        description: "First day of the calendar month in which prescriptions ended."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: represcribed_prescriptions
+        description: "Count of prescriptions in this cohort that led to a re-prescription."
+        data_tests:
+          - not_null
+
+      - name: total_prescriptions
+        description: "Total prescriptions in this cohort."
+        data_tests:
+          - not_null
+
+      - name: represcription_rate
+        description: "Fraction of prescriptions that resulted in a re-prescription (0.0–1.0)."
+        data_tests:
+          - not_null
+
+
+  - name: mart_touchpoint_attribution
+    description: >
+      Conditional probability of re-prescription given each touchpoint type.
+      For each touchpoint type, calculates the proportion of prescriptions that
+      included that touchpoint and subsequently resulted in a re-prescription.
+      One row per touchpoint type, ordered by probability descending.
+      Answers: P(re-prescription | touchpoint_type).
+    columns:
+      - name: touchpoint_type
+        description: "Touchpoint type (e.g. onboarding_call, push_reminder)."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: prescriptions_with_touchpoint
+        description: "Count of distinct prescriptions that included this touchpoint type."
+        data_tests:
+          - not_null
+
+      - name: represcribed_prescriptions
+        description: "Count of prescriptions with this touchpoint type that resulted in a re-prescription."
+        data_tests:
+          - not_null
+
+      - name: p_represcription_given_touchpoint
+        description: >
+          P(re-prescription | touchpoint_type) = represcribed_prescriptions /
+          prescriptions_with_touchpoint. Rounded to 4 decimal places.
+        data_tests:
+          - not_null

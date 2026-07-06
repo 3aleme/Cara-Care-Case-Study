@@ -1,0 +1,98 @@
+version: 2
+
+models:
+  - name: stg_raw_patient_touchpoints
+    description: "Cleaned and typed staging layer over the raw_patient_touchpoints seed. One row per touchpoint event."
+
+    columns:
+      - name: patient_id
+        description: "Unique identifier for the patient."
+        data_tests:
+          - not_null
+
+      - name: email
+        description: "Patient email address."
+        data_tests:
+          - not_null
+
+      - name: date_of_birth
+        description: "Patient date of birth."
+        data_tests:
+          - not_null
+
+      - name: insurance_name
+        description: "Name of the patient's health insurer."
+        data_tests:
+          - not_null
+
+      - name: insurance_type
+        description: "Type of insurance."
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['gesetzlich', 'privat']
+
+      - name: prescription_id
+        description: "Unique identifier for the prescription."
+        data_tests:
+          - not_null
+
+      - name: prescription_start
+        description: "Date the prescription period started."
+        data_tests:
+          - not_null
+
+      - name: prescription_end
+        description: "Date the prescription period ended."
+        data_tests:
+          - not_null
+
+      - name: prescription_status
+        description: "Current status of the prescription."
+        data_tests:
+          - not_null
+
+      - name: doctor_name
+        description: "Full name of the prescribing doctor."
+        data_tests:
+          - not_null
+
+      - name: doctor_specialty
+        description: "Medical specialty of the prescribing doctor."
+        data_tests:
+          - not_null
+
+      - name: doctor_city
+        description: "City where the prescribing doctor practices."
+        data_tests:
+          - not_null
+
+      - name: touchpoint_date
+        description: "Date the touchpoint occurred."
+        data_tests:
+          - not_null
+
+      - name: touchpoint_type
+        description: "Type of touchpoint (e.g. onboarding_call, starter_kit)."
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['onboarding_call', 'starter_kit', 'push_reminder', 'check_in_call', 'email_nudge']
+
+      - name: touchpoint_channel
+        description: "Channel through which the touchpoint was delivered."
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['phone', 'post', 'app', 'email']
+
+      - name: touchpoint_outcome
+        description: "Outcome of the touchpoint interaction."
+        data_tests:
+          - not_null
+
+      - name: has_represcription
+        description: "Whether the patient received a follow-up prescription after this prescription period. Converted from German ja/nein to boolean. NULL if source value is missing."
+
+      - name: represcription_date
+        description: "Date the follow-up prescription was issued. NULL if no re-prescription occurred."

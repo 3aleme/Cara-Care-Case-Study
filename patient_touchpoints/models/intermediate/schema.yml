@@ -1,0 +1,154 @@
+version: 2
+
+# Null-completeness contract: not_null tests at the staging layer
+# (stg_raw_patient_touchpoints) are the primary gate for null values. Any row
+# that reaches these intermediate models has already passed those checks.
+# The not_null tests below are kept as a defense-in-depth measure — they protect
+# against future changes to staging (e.g. a test being dropped or a new source
+# bypassing the staging layer) without adding meaningful runtime cost.
+
+models:
+  - name: int_patients
+    description: "One row per unique patient, deduplicated from the staging layer."
+    columns:
+      - name: patient_id
+        description: "Unique identifier for the patient."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: email
+        description: "Patient email address."
+        data_tests:
+          - not_null
+
+      - name: date_of_birth
+        description: "Patient date of birth."
+        data_tests:
+          - not_null
+
+      - name: insurance_name
+        description: "Name of the patient's health insurer."
+        data_tests:
+          - not_null
+
+      - name: insurance_type
+        description: "Type of insurance."
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['gesetzlich', 'privat']
+
+
+  - name: int_doctors
+    description: "One row per unique doctor, deduplicated from the staging layer. Doctor ID is a surrogate key generated from name, specialty, and city. See assumption A1."
+    columns:
+      - name: doctor_id
+        description: "Surrogate key generated from doctor_name, doctor_specialty, and doctor_city. See assumption A1 for limitations."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: doctor_name
+        description: "Full name of the doctor."
+        data_tests:
+          - not_null
+
+      - name: doctor_specialty
+        description: "Medical specialty of the doctor."
+        data_tests:
+          - not_null
+
+      - name: doctor_city
+        description: "City where the doctor practices."
+        data_tests:
+          - not_null
+
+
+  - name: int_prescriptions
+    description: "One row per unique prescription, deduplicated from the staging layer. Contains foreign keys to patients and doctors."
+    columns:
+      - name: prescription_id
+        description: "Unique identifier for the prescription."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: patient_id
+        description: "Foreign key to int_patients."
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('int_patients')
+              field: patient_id
+
+      - name: doctor_id
+        description: "Foreign key to int_doctors. Surrogate key generated from doctor_name, specialty, and city."
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('int_doctors')
+              field: doctor_id
+
+      - name: prescription_start
+        description: "Date the prescription period started."
+        data_tests:
+          - not_null
+
+      - name: prescription_end
+        description: "Date the prescription period ended."
+        data_tests:
+          - not_null
+
+      - name: prescription_status
+        description: "Current status of the prescription."
+        data_tests:
+          - not_null
+
+      - name: has_represcription
+        description: "Whether the patient received a follow-up prescription. NULL if source value is missing."
+
+      - name: represcription_date
+        description: "Date the follow-up prescription was issued. NULL if no re-prescription occurred."
+
+
+  - name: int_touchpoints
+    description: "One row per unique touchpoint event, deduplicated from the staging layer. Contains a foreign key to prescriptions."
+    columns:
+      - name: touchpoint_id
+        description: "Surrogate key generated from prescription_id, touchpoint_type, and touchpoint_date."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: prescription_id
+        description: "Foreign key to int_prescriptions."
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('int_prescriptions')
+              field: prescription_id
+
+      - name: touchpoint_date
+        description: "Date the touchpoint occurred."
+        data_tests:
+          - not_null
+
+      - name: touchpoint_type
+        description: "Type of touchpoint."
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['onboarding_call', 'starter_kit', 'push_reminder', 'check_in_call', 'email_nudge']
+
+      - name: touchpoint_channel
+        description: "Channel through which the touchpoint was delivered."
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['phone', 'post', 'app', 'email']
+
+      - name: touchpoint_outcome
+        description: "Outcome of the touchpoint interaction."
+        data_tests:
+          - not_null
