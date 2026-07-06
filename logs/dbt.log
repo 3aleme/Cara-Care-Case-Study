@@ -49,3 +49,19 @@ Internal Error
 [0m13:15:45.305551 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b2ba95a5bb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b2ba9053140>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b2b6fa73080>]}
 [0m13:15:45.305759 [debug] [MainThread]: Flushing usage events
 [0m13:15:45.723087 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:58:48.186706 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cfc79d2b860>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cfc7bafe7e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cfc79ed87a0>]}
+
+
+============================== 15:58:48.188419 | d9aefefe-4786-4521-950a-a56a4fab7ccc ==============================
+[0m15:58:48.188419 [info ] [MainThread]: Running with dbt=1.11.12
+[0m15:58:48.188750 [debug] [MainThread]: running dbt with arguments {'profiles_dir': '/home/hassan/.dbt', 'log_path': 'logs', 'empty': 'None', 'log_cache_events': 'False', 'fail_fast': 'False', 'warn_error': 'None', 'introspect': 'True', 'use_colors': 'True', 'no_print': 'None', 'printer_width': '80', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'target_path': 'None', 'log_format': 'default', 'debug': 'False', 'cache_selected_only': 'False', 'write_json': 'True', 'quiet': 'False', 'use_experimental_parser': 'False', 'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'invocation_command': 'dbt test --select intermediate', 'static_parser': 'True'}
+[0m15:58:48.189089 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/hassan/Desktop/Coding/Cara Care Case Study/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m15:58:48.189555 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 0.03543282, "process_in_blocks": "0", "process_kernel_time": 0.050006, "process_mem_max_rss": "102464", "process_out_blocks": "8", "process_user_time": 0.723091}
+[0m15:58:48.189834 [debug] [MainThread]: Command `dbt test` failed at 15:58:48.189779 after 0.04 seconds
+[0m15:58:48.190187 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cfc79ab1280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cfc79173b60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cfc7a9cfd40>]}
+[0m15:58:48.190434 [debug] [MainThread]: Flushing usage events
+[0m15:58:49.150429 [debug] [MainThread]: An error was encountered while trying to flush usage events
