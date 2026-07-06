@@ -1,0 +1,51 @@
+[0m13:13:57.281612 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76b9a2378b60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76b9a22efc20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76b9a2df8a70>]}
+
+
+============================== 13:13:57.283560 | f2ea21d3-3712-4b7b-a857-d991de7298aa ==============================
+[0m13:13:57.283560 [info ] [MainThread]: Running with dbt=1.11.12
+[0m13:13:57.283873 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'log_cache_events': 'False', 'target_path': 'None', 'use_colors': 'True', 'empty': 'None', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'printer_width': '80', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'write_json': 'True', 'invocation_command': 'dbt init', 'fail_fast': 'False', 'log_format': 'default', 'partial_parse': 'True', 'introspect': 'True', 'static_parser': 'True', 'quiet': 'False', 'profiles_dir': '/home/hassan/.dbt', 'log_path': 'logs', 'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'warn_error': 'None', 'debug': 'False'}
+[0m13:14:26.719744 [debug] [MainThread]: Starter project path: /home/hassan/Desktop/Coding/Cara Care Case Study/.venv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m13:14:26.720926 [info ] [MainThread]: 
+Your new dbt project "patient_touchpoints" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m13:14:26.721152 [info ] [MainThread]: Setting up your profile.
+[0m13:15:20.143342 [info ] [MainThread]: Profile patient_touchpoints written to /home/hassan/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m13:15:20.143776 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 82.89506, "process_in_blocks": "0", "process_kernel_time": 0.087732, "process_mem_max_rss": "214020", "process_out_blocks": "80", "process_user_time": 2.374737}
+[0m13:15:20.144167 [debug] [MainThread]: Command `dbt init` succeeded at 13:15:20.144103 after 82.90 seconds
+[0m13:15:20.144390 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76b96e965a30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76b96efca750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76b96db0d730>]}
+[0m13:15:20.144622 [debug] [MainThread]: Flushing usage events
+[0m13:15:20.899235 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:15:44.945684 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b2ba9c9c8f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b2ba8ea0a10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b2ba98c7680>]}
+
+
+============================== 13:15:44.947701 | ee423f8c-dec9-46aa-aa0d-85fee99aa484 ==============================
+[0m13:15:44.947701 [info ] [MainThread]: Running with dbt=1.11.12
+[0m13:15:44.948012 [debug] [MainThread]: running dbt with arguments {'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'profiles_dir': '/home/hassan/.dbt', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'empty': 'None', 'indirect_selection': 'eager', 'quiet': 'False', 'introspect': 'True', 'no_print': 'None', 'cache_selected_only': 'False', 'warn_error': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_cache_events': 'False', 'log_path': 'logs', 'target_path': 'None', 'write_json': 'True', 'printer_width': '80', 'debug': 'False', 'partial_parse': 'True', 'use_experimental_parser': 'False'}
+[0m13:15:44.952982 [info ] [MainThread]: dbt version: 1.11.12
+[0m13:15:44.953196 [info ] [MainThread]: python version: 3.12.3
+[0m13:15:44.953368 [info ] [MainThread]: python path: /home/hassan/Desktop/Coding/Cara Care Case Study/.venv/bin/python3
+[0m13:15:44.953546 [info ] [MainThread]: os info: Linux-6.17.0-35-generic-x86_64-with-glibc2.39
+[0m13:15:45.304095 [info ] [MainThread]: Using profiles dir at /home/hassan/.dbt
+[0m13:15:45.304358 [info ] [MainThread]: Using profiles.yml file at /home/hassan/.dbt/profiles.yml
+[0m13:15:45.304534 [info ] [MainThread]: Using dbt_project.yml file at /home/hassan/Desktop/Coding/Cara Care Case Study/dbt_project.yml
+[0m13:15:45.304724 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m13:15:45.305033 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.3925381, "process_in_blocks": "0", "process_kernel_time": 0.105708, "process_mem_max_rss": "215260", "process_out_blocks": "8", "process_user_time": 2.393409}
+[0m13:15:45.305354 [debug] [MainThread]: Command `dbt debug` failed at 13:15:45.305298 after 0.39 seconds
+[0m13:15:45.305551 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b2ba95a5bb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b2ba9053140>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b2b6fa73080>]}
+[0m13:15:45.305759 [debug] [MainThread]: Flushing usage events
+[0m13:15:45.723087 [debug] [MainThread]: An error was encountered while trying to flush usage events
